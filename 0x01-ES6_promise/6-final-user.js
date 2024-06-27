@@ -2,7 +2,7 @@
 import signUpUser from './4-user-promise';
 import uploadPhoto from './5-photo-reject';
 
-function handleProfileSignup(firstName, lastName, fileName) {
+export default function handleProfileSignup(firstName, lastName, fileName) {
   const signUpPromise = signUpUser(firstName, lastName);
   const uploadPhotoPromise = uploadPhoto(fileName);
 
@@ -14,5 +14,3 @@ function handleProfileSignup(firstName, lastName, fileName) {
       return { status: 'rejected', value: result.reason.message };
     }));
 }
-
-export default handleProfileSignup;
