@@ -1,5 +1,5 @@
 // utils.js
-export const Utils = {
+const Utils = {
   calculateNumber: function (type, a, b) {
     if (type === 'SUM') {
       return Math.round(a) + Math.round(b);
@@ -15,3 +15,4 @@ export const Utils = {
   }
 };
 
+module.exports = { Utils };

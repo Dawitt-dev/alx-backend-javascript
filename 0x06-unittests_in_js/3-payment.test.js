@@ -1,8 +1,8 @@
 // 3-payment.test.js
-import sinon from 'sinon';
-import { expect } from 'chai';
-import { sendPaymentRequestToApi } from './3-payment.js';
-import { Utils } from './utils.js';
+const sinon = require('sinon');
+const { expect } = require('chai');
+const { sendPaymentRequestToApi } = require('./3-payment.js');
+const { Utils } = require('./utils.js');
 
 describe('sendPaymentRequestToApi', function() {
   it('should call Utils.calculateNumber with SUM, 100, 20', function() {
