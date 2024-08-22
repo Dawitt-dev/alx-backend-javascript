@@ -1,24 +1,19 @@
 // utils.js
 const Utils = {
-  calculateNumber(type, a, b) {
-  const roundedA = Math.round(a);
-  const roundedB = Math.round(b);
-
-  if (type === 'SUM') {
-    return roundedA + roundedB;
-  }
-
-  if (type === 'SUBTRACT') {
-    return roundedA - roundedB;
-  }
-
-  if (type === 'DIVIDE') {
-    if (roundedB === 0) {
-      return 'Error';
+  calculateNumber: function (type, a, b) {
+    if (type === 'SUM') {
+      return Math.round(a) + Math.round(b);
+    } else if (type === 'SUBTRACT') {
+      return Math.round(a) - Math.round(b);
+    } else if (type === 'DIVIDE') {
+      if (Math.round(b) === 0) {
+        return 'Error';
+      }
+      return Math.round(a) / Math.round(b);
     }
-    return roundedA / roundedB;
+    throw new Error('Invalid operation type');
   }
+};
 
-  throw new Error('Invalid operation type');
-}
-module.exports = Utils;
+module.exports = { Utils };
+
